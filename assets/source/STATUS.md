@@ -1,37 +1,42 @@
 # SHENKEN assets — generation status
 
-**Status: BLOCKED — the Magnific API can't be reached from the asset-generation session. No assets were generated.**
+**Status: BLOCKED (2nd attempt). The Magnific API still can't be reached from the asset-generation session. No assets were generated.**
 
-_Last updated: 2026-09-24 17:28 UTC_
+_Last updated: 2026-09-24 19:34 UTC_
 
 ## Blocker
 
-API access check (step 1 of the brief, `docs/ASSET_BRIEF.md` §1):
+Access check (brief §1): one request each to the new API host and to the old-name fallback:
 
 ```
-$ curl -sS https://api.magnific.com/v1/ai/mystic
+$ curl -sS "https://api.magnific.com/v1/ai/mystic?page=1&limit=1"
+curl: (56) CONNECT tunnel failed, response 403
+
+$ curl -sS "https://api.freepik.com/v1/ai/mystic?page=1&limit=1"
 curl: (56) CONNECT tunnel failed, response 403
 ```
 
 Agent proxy status (`$HTTPS_PROXY/__agentproxy/status` → `recentRelayFailures`):
 
 ```
-kind:   connect_rejected
-detail: gateway answered 403 to CONNECT (policy denial or upstream failure)
-host:   api.magnific.com:443
+2026-09-24T19:33:34Z  connect_rejected  api.magnific.com:443  gateway answered 403 to CONNECT (policy denial or upstream failure)
+2026-09-24T19:33:37Z  connect_rejected  api.freepik.com:443   gateway answered 403 to CONNECT (policy denial or upstream failure)
 ```
 
-The proxy rejected the connection before it reached Magnific (no HTTP response from the API,
-so this is not a 401/403 from Magnific itself). As the brief and the proxy docs require, I did
-not retry or look for a workaround.
+The egress gateway refused the connection before it reached Magnific or Freepik. There was no
+HTTP response from either API, so this is not a 401/403 about the API key. The Custom network
+policy with `*.magnific.com` / `*.freepik.com` is **not in effect in this session's container**.
+As instructed, I did not retry or look for a workaround.
 
-**Fix (environment owner):** in the cloud environment settings (environment menu in the session
-title bar → Edit → Network access), allow `api.magnific.com`, either by adding it to the allowed
-domains or by choosing a broader access level (see
-https://code.claude.com/docs/en/claude-code-on-the-web). Also allow the CDN host(s) that Magnific
-returns result URLs on; that host is only known after the first successful task. Make sure the
-`x-magnific-api-key` credential for `api.magnific.com` is set up in the same environment. Then
-re-run the asset-generation session.
+**Fix (environment owner):**
+1. Open the cloud environment menu in the session title bar → Edit → Network access. Check that
+   the **Custom** level is saved and that it lists `api.magnific.com` and `api.freepik.com`
+   explicitly, next to the wildcards `*.magnific.com` / `*.freepik.com`. Also list the CDN
+   host(s) that results are served from. That host is only known after the first successful
+   task, so a broader access level for this run is simpler. Access levels are described at
+   https://code.claude.com/docs/en/claude-code-on-the-web.
+2. Start a **new** asset session **after** saving. A container that is already running may
+   keep the network policy it started with.
 
 ## Assets
 
@@ -57,4 +62,4 @@ re-run the asset-generation session.
 
 ## Credits used
 
-0. No request reached the Magnific API.
+0. No request reached the Magnific or Freepik API.
