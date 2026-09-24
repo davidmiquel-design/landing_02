@@ -1,0 +1,290 @@
+{
+  "generator": "Magnific MCP connector (mcp.magnific.com)",
+  "date": "2026-09-24",
+  "assets": {
+    "hero-first-frame": {
+      "file": "images/hero-first-frame.jpg",
+      "model": "mystic-2-5 (2k)",
+      "candidates": 2,
+      "chosen": "B",
+      "upscale": {
+        "mode": "creative",
+        "scale": "2x",
+        "optimised": "FilmAndPhotography",
+        "creativity": 1,
+        "hdr": 1,
+        "resemblance": 4,
+        "engine": "magnific_sharpy"
+      },
+      "master": [
+        4096,
+        2286
+      ],
+      "notes": "A rejected: building in perspective, oculus off-centre"
+    },
+    "p01-casa-umbra": {
+      "file": "images/p01-casa-umbra.jpg",
+      "model": "mystic-2-5 (2k)",
+      "candidates": 2,
+      "chosen": "A",
+      "upscale": {
+        "mode": "creative",
+        "scale": "2x",
+        "optimised": "FilmAndPhotography",
+        "creativity": 1,
+        "hdr": 1,
+        "resemblance": 4,
+        "engine": "magnific_sharpy"
+      },
+      "master": [
+        3300,
+        4096
+      ],
+      "notes": ""
+    },
+    "p02-nocturne-baths": {
+      "file": "images/p02-nocturne-baths.jpg",
+      "model": "mystic-2-5 (2k)",
+      "candidates": 2,
+      "chosen": "A",
+      "upscale": {
+        "mode": "creative",
+        "scale": "2x",
+        "optimised": "FilmAndPhotography",
+        "creativity": 1,
+        "hdr": 1,
+        "resemblance": 4,
+        "engine": "magnific_sharpy"
+      },
+      "master": [
+        3300,
+        4096
+      ],
+      "notes": "B rejected: near-daylight sky"
+    },
+    "p02-nocturne-baths-wide": {
+      "file": "images/p02-nocturne-baths-wide.jpg",
+      "model": "mystic-2-5 (2k)",
+      "candidates": 2,
+      "chosen": "A",
+      "upscale": {
+        "mode": "creative",
+        "scale": "2x",
+        "optimised": "FilmAndPhotography",
+        "creativity": 1,
+        "hdr": 1,
+        "resemblance": 4,
+        "engine": "magnific_sharpy"
+      },
+      "master": [
+        4096,
+        2286
+      ],
+      "notes": "B rejected: daylight skylight"
+    },
+    "p03-archive-of-silence": {
+      "file": "images/p03-archive-of-silence.jpg",
+      "model": "mystic-2-5 (2k)",
+      "candidates": 2,
+      "chosen": "A",
+      "upscale": {
+        "mode": "creative",
+        "scale": "2x",
+        "optimised": "FilmAndPhotography",
+        "creativity": 1,
+        "hdr": 1,
+        "resemblance": 4,
+        "engine": "magnific_sharpy"
+      },
+      "master": [
+        3300,
+        4096
+      ],
+      "notes": "B rejected: small human figures"
+    },
+    "p04-chapel-of-the-slit": {
+      "file": "images/p04-chapel-of-the-slit.jpg",
+      "model": "mystic-2-5 (2k)",
+      "candidates": 2,
+      "chosen": "B",
+      "upscale": {
+        "mode": "creative",
+        "scale": "2x",
+        "optimised": "FilmAndPhotography",
+        "creativity": 1,
+        "hdr": 1,
+        "resemblance": 4,
+        "engine": "magnific_sharpy"
+      },
+      "master": [
+        3300,
+        4096
+      ],
+      "notes": ""
+    },
+    "p05-torre-brava": {
+      "file": "images/p05-torre-brava.jpg",
+      "model": "mystic-2-5 (2k)",
+      "candidates": 2,
+      "chosen": "A",
+      "upscale": {
+        "mode": "creative",
+        "scale": "2x",
+        "optimised": "FilmAndPhotography",
+        "creativity": 1,
+        "hdr": 1,
+        "resemblance": 4,
+        "engine": "magnific_sharpy"
+      },
+      "master": [
+        3300,
+        4096
+      ],
+      "notes": "B returned no image"
+    },
+    "p06-museum-of-erosion": {
+      "file": "images/p06-museum-of-erosion.jpg",
+      "model": "mystic-2-5 (2k)",
+      "candidates": 2,
+      "chosen": "A",
+      "upscale": {
+        "mode": "creative",
+        "scale": "2x",
+        "optimised": "FilmAndPhotography",
+        "creativity": 1,
+        "hdr": 1,
+        "resemblance": 4,
+        "engine": "magnific_sharpy"
+      },
+      "master": [
+        3300,
+        4096
+      ],
+      "notes": ""
+    },
+    "studio-interior": {
+      "file": "images/studio-interior.jpg",
+      "model": "mystic-2-5 (2k)",
+      "candidates": 2,
+      "chosen": "A",
+      "upscale": {
+        "mode": "creative",
+        "scale": "2x",
+        "optimised": "FilmAndPhotography",
+        "creativity": 1,
+        "hdr": 1,
+        "resemblance": 4,
+        "engine": "magnific_sharpy"
+      },
+      "master": [
+        3300,
+        4096
+      ],
+      "notes": "only A shows the moonlight ellipse on the floor"
+    },
+    "oculus-moon": {
+      "file": "images/oculus-moon.jpg",
+      "model": "mystic-2-5 (2k)",
+      "candidates": 2,
+      "chosen": "A",
+      "upscale": {
+        "mode": "creative",
+        "scale": "2x",
+        "optimised": "FilmAndPhotography",
+        "creativity": 1,
+        "hdr": 1,
+        "resemblance": 4,
+        "engine": "magnific_sharpy"
+      },
+      "master": [
+        4096,
+        4096
+      ],
+      "notes": ""
+    },
+    "footer-moonrise": {
+      "file": "images/footer-moonrise.jpg",
+      "model": "mystic-2-5 (2k)",
+      "candidates": 2,
+      "chosen": "B",
+      "upscale": {
+        "mode": "creative",
+        "scale": "2x",
+        "optimised": "FilmAndPhotography",
+        "creativity": 1,
+        "hdr": 1,
+        "resemblance": 4,
+        "engine": "magnific_sharpy"
+      },
+      "master": [
+        4096,
+        2286
+      ],
+      "notes": "B has the moon path on the lake"
+    },
+    "lightstudy-dusk": {
+      "file": "images/lightstudy-dusk.jpg",
+      "model": "mystic-2-5 (2k)",
+      "candidates": 2,
+      "chosen": "A",
+      "upscale": {
+        "mode": "creative",
+        "scale": "2x",
+        "optimised": "FilmAndPhotography",
+        "creativity": 1,
+        "hdr": 1,
+        "resemblance": 4,
+        "engine": "magnific_sharpy"
+      },
+      "master": [
+        4096,
+        2286
+      ],
+      "notes": "overcast dusk; some windows already lit (the brief asked for all dark)"
+    },
+    "story-photo": {
+      "file": "images/story-photo.jpg",
+      "model": "mystic-2-5 (2k)",
+      "candidates": 1,
+      "chosen": "A",
+      "upscale": {
+        "mode": "creative",
+        "scale": "2x",
+        "optimised": "FilmAndPhotography",
+        "creativity": 1,
+        "hdr": 1,
+        "resemblance": 4,
+        "engine": "magnific_sharpy"
+      },
+      "master": [
+        3100,
+        4096
+      ],
+      "notes": "second candidate hit the concurrency limit"
+    },
+    "story-sketch": {
+      "file": "images/story-sketch.jpg",
+      "model": "auto (image reference = upscaled story-photo)",
+      "candidates": 2,
+      "chosen": "A",
+      "upscale": null,
+      "master": [
+        3100,
+        4096
+      ],
+      "notes": "Mystic has no structure reference via MCP; generated from the photo as image reference. Not upscaled (line drawing, 1328x1760 resized locally to match story-photo)."
+    },
+    "hero": {
+      "file": "video/hero-1080p.mp4",
+      "model": "kling-30 image-to-video, 1080p, 10 s",
+      "first_frame": "hero-first-frame (upscaled)",
+      "attempts": 1,
+      "upscale": null,
+      "size": [
+        1928,
+        1072
+      ],
+      "notes": "No video upscale (budget, agreed with the user)."
+    }
+  }
+}
