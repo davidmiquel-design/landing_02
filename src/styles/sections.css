@@ -341,6 +341,12 @@ sup.star {
   background: var(--c-night);
 }
 
+/* Slides over the last pinned screen of the rings (see rings.js). */
+.rings.is-pinned + .works {
+  z-index: 1;
+  margin-top: -100vh;
+}
+
 .works__head {
   display: flex;
   flex-direction: column;

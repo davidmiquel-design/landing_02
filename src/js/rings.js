@@ -130,8 +130,8 @@ export function initRings({ reduced }) {
       ctx.restore();
     });
 
-    // Hand over to the next section: the oculus darkens into the page colour.
-    const out = smoothstep(0.88, 1, progress);
+    // Dim the moon slightly as the next section slides over it.
+    const out = 0.35 * smoothstep(0.88, 1, progress);
     if (out > 0) {
       ctx.fillStyle = `rgba(11, 11, 12, ${out})`;
       ctx.fillRect(0, 0, width, height);
@@ -152,15 +152,20 @@ export function initRings({ reduced }) {
   });
 
   // The pin goes first so the visibility trigger below measures the pinned height.
+  // It holds one extra screen: the zoom finishes within ZOOM of the pin, then the
+  // works section (pulled up by .rings.is-pinned + .works) slides over the moon
+  // instead of leaving an empty dark screen between the two sections.
   if (!reduced) {
+    const ZOOM = 240;
+    section.classList.add('is-pinned');
     ScrollTrigger.create({
       trigger: stage,
       start: 'top top',
-      end: '+=240%',
+      end: `+=${ZOOM + 100}%`,
       pin: true,
       scrub: true,
       onUpdate: (self) => {
-        progress = self.progress;
+        progress = Math.min(1, (self.progress * (ZOOM + 100)) / ZOOM);
         if (!visible) draw();
       },
     });

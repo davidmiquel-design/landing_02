@@ -92,6 +92,7 @@ def lightstudy(p):
     return im
 
 sequence('light', 36, lightstudy, {'lg': (1920, 1080), 'sm': (960, 540)})
+save_variants(label(lightstudy(0.15).resize((3200, 1800), Image.LANCZOS), 'lightstudy-dusk'), 'lightstudy-dusk', [960, 1600, 2400, 3200])
 
 # ---- stills
 hero0 = monolith_scene(3200, 1800, 1.0)
