@@ -6,3 +6,6 @@ dist/
 # local scratch
 .cache/
 tmp/
+
+# placeholder media (replaced by Magnific assets)
+public/media/

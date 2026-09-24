@@ -1,0 +1,452 @@
+/* ---------------------------------------------------------------- mark */
+.mark {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.mark path {
+  fill: currentColor;
+}
+
+/* ---------------------------------------------------------------- buttons */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 2.5rem;
+  padding: 0 1.15rem;
+  overflow: hidden;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  font-stretch: 105%;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  isolation: isolate;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--c-amber);
+  transform: translateY(101%);
+  transition: transform 0.55s var(--ease-out);
+}
+
+.btn:hover::after,
+.btn:focus-visible::after {
+  transform: none;
+}
+
+.btn--bone {
+  background: var(--c-bone);
+  color: var(--c-void);
+}
+
+.btn--night {
+  background: var(--c-void);
+  color: var(--c-bone);
+}
+
+.btn--night:hover,
+.btn--night:focus-visible {
+  color: var(--c-void);
+}
+
+.oculus-btn {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--c-amber);
+  color: var(--c-void);
+  transition: transform 0.5s var(--ease-out), background-color 0.3s;
+}
+
+.oculus-btn svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.oculus-btn:hover svg,
+a:hover > .oculus-btn svg,
+.oculus-btn:focus-visible svg {
+  transform: rotate(-45deg);
+}
+
+.oculus-btn--sm {
+  width: 2.125rem;
+  height: 2.125rem;
+}
+
+.oculus-btn--night {
+  background: var(--c-void);
+  color: var(--c-amber);
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: var(--fs-small);
+  font-weight: 500;
+}
+
+.link-arrow span {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+  padding-bottom: 2px;
+  transition: background-size 0.5s var(--ease-out);
+}
+
+.link-arrow:hover span {
+  background-size: 0 1px;
+  background-position: 100% 100%;
+}
+
+/* ---------------------------------------------------------------- header */
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 60;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: var(--header-h);
+  padding: 0 var(--gutter);
+  color: var(--c-bone);
+  transition: color 0.45s;
+  pointer-events: none;
+}
+
+.header > * {
+  pointer-events: auto;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 -2.5rem;
+  z-index: -1;
+  background: linear-gradient(rgb(6 6 6 / 0.62), rgb(6 6 6 / 0));
+  transition: opacity 0.45s;
+  pointer-events: none;
+}
+
+.header--on-light {
+  color: var(--c-void);
+}
+
+.header--on-light::before {
+  opacity: 0;
+}
+
+.header__nav {
+  display: flex;
+  gap: clamp(0.9rem, 1.6vw, 1.75rem);
+  font-size: var(--fs-small);
+}
+
+.header__nav a {
+  position: relative;
+  opacity: 0.55;
+  transition: opacity 0.35s, padding 0.5s var(--ease-out);
+}
+
+.header__nav a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0.4375rem;
+  height: 0.4375rem;
+  border-radius: 50%;
+  background: var(--c-amber);
+  transform: translateY(-50%) scale(0);
+  transition: transform 0.5s var(--ease-out);
+}
+
+.header__nav a:hover {
+  opacity: 0.9;
+}
+
+.header__nav a.is-active {
+  padding-left: 0.95rem;
+  opacity: 1;
+}
+
+.header__nav a.is-active::before {
+  transform: translateY(-50%) scale(1);
+}
+
+.header--on-light .header__nav a::before {
+  background: var(--c-void);
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  font-stretch: 125%;
+  letter-spacing: 0.2em;
+  margin-right: -0.2em;
+}
+
+.header__logo .mark {
+  width: 0.75rem;
+  height: 1rem;
+  color: var(--c-amber);
+  transition: color 0.45s;
+}
+
+.header--on-light .header__logo .mark {
+  color: var(--c-void);
+}
+
+.header__cta {
+  display: flex;
+  justify-self: end;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.header--on-light .btn--bone {
+  background: var(--c-void);
+  color: var(--c-bone);
+}
+
+.header--on-light .oculus-btn {
+  background: var(--c-void);
+  color: var(--c-amber);
+}
+
+html.is-loading .header,
+html.is-loading .progress {
+  visibility: hidden;
+}
+
+/* ---------------------------------------------------------------- preloader */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  color: var(--c-bone);
+}
+
+.preloader__curtain {
+  --r: 0px;
+  position: absolute;
+  inset: 0;
+  background: var(--c-void);
+  -webkit-mask: radial-gradient(circle at var(--cx, 50%) var(--cy, 50%), transparent var(--r), #000 calc(var(--r) + 0.5px));
+  mask: radial-gradient(circle at var(--cx, 50%) var(--cy, 50%), transparent var(--r), #000 calc(var(--r) + 0.5px));
+}
+
+.preloader__mark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 3.75rem;
+  height: 5rem;
+  margin: -1.625rem 0 0 -1.875rem; /* the oculus sits on the exact centre */
+  color: var(--c-amber);
+  transform-origin: 50% 32.5%;
+  will-change: transform;
+}
+
+.preloader__plug {
+  position: absolute;
+  /* 1px bleed so no hairline of the hole shows around the plug */
+  left: calc(28.333% - 1px);
+  top: calc(16.25% - 1px);
+  width: calc(43.333% + 2px);
+  height: calc(32.5% + 2px);
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.preloader__word {
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 4.75rem);
+  transform: translateX(-50%);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  font-stretch: 125%;
+  letter-spacing: 0.5em;
+  margin-right: -0.5em;
+  white-space: nowrap;
+}
+
+.preloader__meta {
+  position: absolute;
+  left: var(--gutter);
+  right: var(--gutter);
+  bottom: var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  color: var(--c-ash);
+}
+
+.preloader__count {
+  color: var(--c-bone);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------------- cursor */
+.cursor {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.cursor.is-visible {
+  opacity: 1;
+}
+
+.cursor__dot,
+.cursor__ring {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.cursor__dot {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: var(--c-amber);
+}
+
+.cursor__ring {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: -1.125rem 0 0 -1.125rem;
+  border: 1px solid rgb(236 230 218 / 0.35);
+  border-radius: 50%;
+  transition: width 0.45s var(--ease-out), height 0.45s var(--ease-out), margin 0.45s var(--ease-out),
+    background-color 0.35s, border-color 0.35s;
+}
+
+.cursor.is-hover .cursor__ring {
+  width: 3.25rem;
+  height: 3.25rem;
+  margin: -1.625rem 0 0 -1.625rem;
+  border-color: var(--c-amber);
+}
+
+.cursor.is-label .cursor__ring {
+  width: 5.5rem;
+  height: 5.5rem;
+  margin: -2.75rem 0 0 -2.75rem;
+  border-color: transparent;
+  background: var(--c-amber);
+}
+
+.cursor__label {
+  font-family: var(--f-mono);
+  font-size: var(--fs-mono);
+  font-style: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-void);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.cursor.is-label .cursor__label {
+  opacity: 1;
+}
+
+.cursor.is-label .cursor__dot {
+  opacity: 0;
+}
+
+/* ---------------------------------------------------------------- progress */
+.progress {
+  position: fixed;
+  right: var(--gutter);
+  bottom: var(--gutter);
+  z-index: 55;
+  width: 2.5rem;
+  height: 2.5rem;
+  pointer-events: none;
+}
+
+.progress svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress circle {
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.progress__track {
+  stroke: var(--c-line-strong);
+}
+
+.progress__bar {
+  stroke: var(--c-amber);
+}
+
+/* ---------------------------------------------------------------- grain */
+.grain {
+  position: fixed;
+  inset: -100%;
+  z-index: 85;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1s steps(6) infinite;
+}
+
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-4%, 3%); }
+  40% { transform: translate(3%, -5%); }
+  60% { transform: translate(-2%, 6%); }
+  80% { transform: translate(5%, -2%); }
+  100% { transform: translate(0, 0); }
+}
+
+@media (max-width: 899px) {
+  .header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header__logo {
+    justify-self: start;
+  }
+
+  .header__cta .btn {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain {
+    animation: none;
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "images": {
+    "footer-moonrise": {
+      "w": 3200,
+      "h": 1800,
+      "widths": [
+        960,
+        1600,
+        2400,
+        3200
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ]
+    },
+    "hero-first-frame": {
+      "w": 3200,
+      "h": 1800,
+      "widths": [
+        960,
+        1600,
+        2400,
+        3200
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ]
+    },
+    "lightstudy-dusk": {
+      "w": 3200,
+      "h": 1800,
+      "widths": [
+        960,
+        1600,
+        2400,
+        3200
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ]
+    },
+    "oculus-moon": {
+      "w": 2000,
+      "h": 2000,
+      "widths": [
+        800,
+        1400,
+        2000
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ]
+    },
+    "p01-casa-umbra": {
+      "w": 1600,
+      "h": 2000,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ]
+    },
+    "p02-nocturne-baths": {
+      "w": 1600,
+      "h": 2000,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ]
+    },
+    "p02-nocturne-baths-wide": {
+      "w": 3200,
+      "h": 1800,
+      "widths": [
+        960,
+        1600,
+        2400,
+        3200
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ]
+    },
+    "p03-archive-of-silence": {
+      "w": 1600,
+      "h": 2000,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ]
+    },
+    "p04-chapel-of-the-slit": {
+      "w": 1600,
+      "h": 2000,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ]
+    },
+    "p05-torre-brava": {
+      "w": 1600,
+      "h": 2000,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ]
+    },
+    "p06-museum-of-erosion": {
+      "w": 1600,
+      "h": 2000,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ]
+    },
+    "story-photo": {
+      "w": 1500,
+      "h": 2000,
+      "widths": [
+        600,
+        1000,
+        1500
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ]
+    },
+    "story-sketch": {
+      "w": 1500,
+      "h": 2000,
+      "widths": [
+        600,
+        1000,
+        1500
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ]
+    },
+    "studio-interior": {
+      "w": 1600,
+      "h": 2000,
+      "widths": [
+        480,
+        800,
+        1200,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ]
+    }
+  },
+  "sequences": {
+    "hero": {
+      "count": 48,
+      "sizes": {
+        "lg": [
+          1920,
+          1080
+        ],
+        "sm": [
+          960,
+          540
+        ]
+      }
+    },
+    "light": {
+      "count": 36,
+      "sizes": {
+        "lg": [
+          1920,
+          1080
+        ],
+        "sm": [
+          960,
+          540
+        ]
+      }
+    }
+  }
+}
